@@ -1,0 +1,35 @@
+<section class="aside">
+  <div class="container">
+    <div class="section">
+      <p class="filter-text">Sorting by:</p>
+      <div class="filter-list">
+        <a
+          class="list-a"
+          [routerLink]="['/date']"
+          routerLinkActive="active"
+          [ngClass]="{ activeClass: step === 'step1' }"
+          (click)="step = 'step1'"
+          >date</a
+        >
+        <a
+          class="list-a"
+          [routerLink]="['/count-of-views']"
+          routerLinkActive="active"
+          >count of views</a
+        >
+        <a
+          class="list-a"
+          [routerLink]="['/by-word-or-sentance']"
+          routerLinkActive="active"
+          >by word or sentance</a
+        >
+      </div>
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="filteredCard"
+        (keyup)="search($event)"
+      />
+    </div>
+  </div>
+</section>
